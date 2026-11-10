@@ -19,3 +19,9 @@ for entreprise, prix in offres.items():
 
     if ecart < -20:
         print("  A examiner : prix nettement inferieur")
+print("\nCLASSEMENT DES OFFRES")
+
+classement = sorted(offres.items(), key=lambda offre: offre[1])
+
+for rang, (entreprise, prix) in enumerate(classement, start=1):
+    print(f"{rang}. {entreprise} : {prix} euros")
